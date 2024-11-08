@@ -1,12 +1,13 @@
 import React from 'react';
-import './Auth.css';
-import logo from '../assets/hospital.svg';
-function Auth() {
-  const handleLogin = (event) => {
-    event.preventDefault(); // Prevents the form from submitting
-    // Here you can add any logic, such as routing or authentication
-    console.log("Login button clicked");
-  };
+import './App.css';
+import logo from './assets/hospital.svg';
+import App from './App';
+function Login() {
+    const handleLogin = (event) => {
+        event.preventDefault(); // Prevents the form from submitting
+        // Here you can add any logic, such as routing or authentication
+        console.log("Login button clicked");
+      };
   return (
     <><div className="App">
           <header className="App-header">
@@ -27,11 +28,11 @@ function Auth() {
                           <label htmlFor="password">Password</label>
                           <input type="password" id="password" name="password" required />
                       </div>
-                      <button type="submit" className="login-button" onClick={handleLogin}>Login</button>
+                      <button type="submit" className="login-button" onClick={<App />}>Login</button>
                   </form>
               </div>
           </div></>
   );
 }
 
-export default Auth;
+export default Login;

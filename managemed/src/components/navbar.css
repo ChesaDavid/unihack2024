@@ -1,0 +1,62 @@
+/* Reset some default styles for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+  }
+  
+  /* Navbar Styling */
+  nav {
+    background-color: #000; /* Full black background */
+    position: fixed; /* Keep navbar at the top */
+    width: 100%; /* Make the navbar span the entire width */
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: right; /* Align the content to the right */
+    z-index: 1000; /* Make sure the navbar stays on top of other content */
+  }
+  
+  /* Navbar list styling */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Align the items to the right */
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white;
+  }
+  
+  /* Optional: Responsive design for small screens */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: flex-end; /* Align to the right for small screens as well */
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  }
+  
