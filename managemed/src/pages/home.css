@@ -1,0 +1,27 @@
+/* Slideshow styling */
+.slideshow {
+    width: 750px;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .slideshow img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+  #slideimg{
+    width: 760px;
+    height: 560px;
+  }
