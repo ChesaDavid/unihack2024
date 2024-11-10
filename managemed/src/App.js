@@ -21,7 +21,7 @@ function App() {
         <Route path="/nouser" element={<NoUser />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/hd" element={<HospitalData />} />
+        <Route path="/hd/:hospitalID?/:levelID?/:roomID?/:patientID?" element={<HospitalData />} />
         <Route path="/search" element={<Search />} />
       </Routes>
     </Router>

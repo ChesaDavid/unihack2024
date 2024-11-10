@@ -14,6 +14,7 @@ function Profile() {
         displayName: user.displayName,
         uid: user.uid,
       });
+      console.log(user.displayName);
     } else {
       // navigate('/login');
     }

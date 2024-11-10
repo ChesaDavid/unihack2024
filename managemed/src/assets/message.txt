@@ -180,16 +180,16 @@ function HospitalData() {
               onChange={(e) => setHospitalName(e.target.value)}
               placeholder="Hospital Name"
             />
-            <button onClick={addHospital} className="button-blue">Add Hospital</button>
+            <button onClick={addHospital}>Add Hospital</button>
             {hospitals.map((hospital) => (
-              <div key={hospital.id} className="box spital">
+              <div key={hospital.id} className="box">
                 <div
                   onClick={() => navigateToHospital(hospital.id)}
                   style={{ cursor: "pointer", color: "blue" }}
                 >
                   <h1>Hospital: {hospital.hospitalName}</h1>
                 </div>
-                <button onClick={() => deleteHospital(hospital.id)} className="button-of-delete">
+                <button onClick={() => deleteHospital(hospital.id)} style={{ color: "red" }}>
                   Delete Hospital
                 </button>
               </div>
@@ -201,8 +201,8 @@ function HospitalData() {
         return (
           <div>
             <h1>Hospital: {hospital.hospitalName}</h1>
-            <button onClick={() => setCurrentPage("hospitals")} className="button-blue">Back to Hospitals</button>
-            <button onClick={addLevel} className="button-blue">Add Level</button>
+            <button onClick={() => setCurrentPage("hospitals")}>Back to Hospitals</button>
+            <button onClick={addLevel}>Add Level</button>
             {hospital.floor && (
               <div>
                 {Object.keys(hospital.floor).map((levelKey, index) => {
@@ -215,7 +215,7 @@ function HospitalData() {
                       >
                         <h2>Level {index + 1}</h2>
                       </div>
-                      <button onClick={() => deleteLevel(hospital.id, levelKey)} className="button-of-delete">
+                      <button onClick={() => deleteLevel(hospital.id, levelKey)} style={{ color: "red" }}>
                         Delete Level
                       </button>
                     </div>
@@ -230,8 +230,8 @@ function HospitalData() {
         return (
           <div>
             <h1>Level: {level.floorNumber}</h1>
-            <button onClick={() => setCurrentPage("hospital")} className="button-blue">Back to Hospital</button>
-            <button onClick={addRoom} className="button-blue">Add Room</button>
+            <button onClick={() => setCurrentPage("hospital")}>Back to Hospital</button>
+            <button onClick={addRoom}>Add Room</button>
             {level.roomInfo && (
               <div>
                 {Object.keys(level.roomInfo).map((roomKey, index) => {
@@ -244,8 +244,7 @@ function HospitalData() {
                       >
                         <h2>Room {index + 1}</h2>
                       </div>
-                      <button onClick={() => deleteRoom(hospitalID1, levelID1, roomKey)} className="button-blue"
-                      >
+                      <button onClick={() => deleteRoom(hospitalID1, levelID1, roomKey)} style={{ color: "red" }}>
                         Delete Room
                       </button>
                     </div>
@@ -263,10 +262,7 @@ function HospitalData() {
         return (
           <div>
             <h1>Room: {room.roomNumber}</h1>
-            <button onClick={() => setCurrentPage("level")}
-              className="button-blue"
-
-              >Back to Level</button>
+            <button onClick={() => setCurrentPage("level")}>Back to Level</button>
             <h2 className="title">Add New Patient</h2>
             <div className="addPatient">
             <input
@@ -300,9 +296,7 @@ function HospitalData() {
               placeholder="Status"
             />
             </div>
-            <button onClick={addPatient}
-            className="button-blue"
-            >Add Patient</button>
+            <button onClick={addPatient}>Add Patient</button>
 
             {room.pacientInfo && (
               <div className="patients">
@@ -343,7 +337,7 @@ function HospitalData() {
             <p>Status: {patient.pacientStatus}</p>
             <button
               onClick={() => setEditingStatus((prevStatus) => ({ ...prevStatus, [patientID1]: true }))}
-               className="button-blue"
+              style={{ color: "orange" }}
             >
               Edit Status
             </button>
@@ -355,9 +349,7 @@ function HospitalData() {
                   onChange={(e) => setNewStatus(e.target.value)}
                   placeholder="Enter new status"
                 />
-                <button 
-                onClick={() => updatePatientStatus(patientID1, newStatus)} 
-                className="button-blue">
+                <button onClick={() => updatePatientStatus(patientID1, newStatus)} style={{ color: "green" }}>
                   Save Status
                 </button>
               </div>
@@ -377,7 +369,7 @@ function HospitalData() {
     }
   };
 
-  return <div className="boxboxCartaj">{renderPage()}</div>;
+  return <div className="container">{renderPage()}</div>;
 }
 
 export default HospitalData;
